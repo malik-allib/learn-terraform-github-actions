@@ -12,10 +12,10 @@ terraform {
   required_version = "~> 1.0"
 
   backend "remote" {
-    organization = "REPLACE_ME"
+    organization = "github-test-API"
 
     workspaces {
-      name = "REPLACE_ME"
+      name = "github-demo"
     }
   }
 }
@@ -36,7 +36,7 @@ resource "aws_instance" "web" {
 
   user_data = <<-EOF
               #!/bin/bash
-              echo "Hello, World" > index.html
+              echo "Hello HELLO, World" > index.html
               nohup busybox httpd -f -p 8080 &
               EOF
 }
